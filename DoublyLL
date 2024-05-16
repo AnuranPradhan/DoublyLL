@@ -104,6 +104,19 @@ public static Node deletefirst(Node head,Node tail) {
 		tail.next=null;
 		return tail;
 	}
+public static void search(Node head) {
+		System.out.println("Enter the redg number:");
+		int redg=sc.nextInt();
+		Node temp=head;
+		while(temp!=null) {
+			if(temp.redg==redg) {
+				temp.marks=sc.nextFloat();
+				return;
+			}
+			temp=temp.next;
+		}
+		System.out.println("Not found");
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 head=insertbeg(head,tail);
