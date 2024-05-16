@@ -1,0 +1,80 @@
+package Assignment5;
+import java.util.Scanner;
+class Node{
+	int redg;
+	float marks;
+	Node next;
+	Node prev;
+	public Node(int redg, float marks) {
+		this.redg = redg;
+		this.marks = marks;
+		this.next=null;
+		this.prev=null;
+	}
+}
+
+public class Q1 {
+	static Node head;
+	static Node tail;
+	public static  Node create() {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the regd and marks: ");
+		int redg=sc.nextInt();
+		float marks=sc.nextFloat();
+			return new Node(redg,marks);
+	}
+	public static Node insertbeg(Node head,Node tail) {
+
+		Node node =create();
+		if(head==null) {
+			head=tail=node;
+			
+		}else {
+			node.next=head;
+			node.prev=null;
+				head.prev=node;
+			head=node;
+		}
+		return head;
+	}
+	public static Node insertend(Node head,Node tail) {
+		Node node =create();
+	if(head==null){
+		 head=tail=node;
+	}else {
+		tail.next=node;
+		node.prev=tail;
+		node.next=null;
+		tail=node;
+	}
+
+		return tail;
+		
+	}
+	public static void display(Node head,Node tail) {
+		if(head==null) {
+			System.out.println("List is empty");
+		}
+		Node node =head;
+		while(node!=null) {
+			System.out.print(node.redg+"->");
+			node=node.next;
+		}
+		System.out.println("null");
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+head=insertbeg(head,tail);
+
+head=insertbeg(head,tail);
+
+head=insertbeg(head,tail);
+
+tail=insertend(head,tail);
+
+display(head,tail);
+
+	}
+
+}
