@@ -120,13 +120,21 @@ public static void search(Node head) {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 head=insertbeg(head,tail);
-
+if(tail==null){
+tail=head;
+{
 head=insertbeg(head,tail);
-
+if(tail==null){
+tail=head;
+{
 head=insertbeg(head,tail);
-
+if(tail==null){
+tail=head;
+{
 tail=insertend(head,tail);
-
+if(head==null){
+head=tail;
+{
 display(head,tail);
 
 	}
