@@ -51,6 +51,25 @@ public class Q1 {
 		return tail;
 		
 	}
+public static Node insertany(Node head,Node tail,int position) {
+		Node node =create();
+		if(head==null) {
+			head=tail=node;
+		}
+		Node temp=head;
+		for(int i=1;i<position;i++) {
+			temp=temp.next;
+		}
+		if(temp!=null) {
+			node.next=temp.next;
+		}
+		if(temp.next!=null) {
+			temp.next.prev=node;
+		}
+		temp.next=node;
+		node.prev=temp;
+		return head;
+	}
 	public static void display(Node head,Node tail) {
 		if(head==null) {
 			System.out.println("List is empty");
@@ -62,6 +81,28 @@ public class Q1 {
 		}
 		System.out.println("null");
 		
+	}
+public static Node deletefirst(Node head,Node tail) {
+		if(head==null) {
+			System.out.println("List is empty");
+			return null;
+		}
+		if(head.next!=null) {
+			head=head.next;
+		}
+		head.prev=null;
+		return head;
+	}
+	public static  Node deletelast(Node head,Node tail) {
+		if(tail==null) {
+			System.out.println("List is empty");
+			return null;
+		}
+		if(tail.prev!=null) {
+			tail=tail.prev;
+		}
+		tail.next=null;
+		return tail;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
