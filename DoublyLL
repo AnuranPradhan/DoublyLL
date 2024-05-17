@@ -51,15 +51,17 @@ public class Q1 {
 		return tail;
 		
 	}
-public static Node insertany(Node head,Node tail,int position) {
-		Node node =create();
-		if(head==null) {
-			head=tail=node;
+public static Node insertany(Node head,Node tail) {
+		System.out.println("Enter the position");
+		int position=sc.nextInt();
+		if(position==0) {
+			return insertbeg(head,tail);
 		}
 		Node temp=head;
 		for(int i=1;i<position;i++) {
 			temp=temp.next;
 		}
+		Node node=create();
 		if(temp!=null) {
 			node.next=temp.next;
 		}
