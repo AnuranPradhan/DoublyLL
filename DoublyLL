@@ -54,11 +54,11 @@ public class Q1 {
 public static Node insertany(Node head,Node tail) {
 		System.out.println("Enter the position");
 		int position=sc.nextInt();
-		if(position==0) {
+		if(position==1) {
 			return insertbeg(head,tail);
 		}
 		Node temp=head;
-		for(int i=1;i<position;i++) {
+		for(int i=1;i<position-1;i++) {
 			temp=temp.next;
 		}
 		Node node=create();
